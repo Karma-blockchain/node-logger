@@ -33,7 +33,7 @@ module.exports = label => {
     })
   ]
 
-  if (process.env.FILE_LOG.toLowerCase() == 'true')
+  if (process.env.FILE_LOG && process.env.FILE_LOG.toLowerCase() == 'true')
     transports.push(
       new winston.transports.File({
         level: process.env.LOG_LEVEL || 'info',
