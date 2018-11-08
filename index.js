@@ -8,7 +8,7 @@ require("dotenv").config();
 
 module.exports = label => {
   let appName = process.env.LOGSTASH_APP_NAME || process.cwd().split("/").slice(-1).pop()
-  let format = data => JSON.stringify({
+  let logstashFormat = data => JSON.stringify({
     '@timestamp': data.timestamp,
     '@version': '1',
     'message': data.message,
@@ -23,12 +23,17 @@ module.exports = label => {
     'app': appName
   })
 
+  let simpleFormat = data => 
+    `${data.timestamp} [${data.level}] ${appName} ${data.message}`
+
   let transports = [
     new winston.transports.Console({
       level: process.env.LOG_LEVEL || 'info',
       format: combine(
         timestamp(),
-        printf(format)
+        printf(
+          process.env.STDOUT_LOG_FORMAT !== "simple"  
+            ? logstashFormat : simpleFormat)
       )
     })
   ]
@@ -41,7 +46,7 @@ module.exports = label => {
         maxsize: 10000000,
         format: combine(
           timestamp(),
-          printf(data => `${data.timestamp} [${data.level}] ${appName} ${data.message}`)
+          printf(simpleFormat)
         ),
         json: false
       })
