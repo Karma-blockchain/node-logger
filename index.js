@@ -24,7 +24,7 @@ module.exports = label => {
   })
 
   let simpleFormat = data => 
-    `${data.timestamp} [${data.level}] ${appName} ${data.message}`
+    `${data.timestamp} [${data.level}] ${label} ${data.message}`
 
   let transports = [
     new winston.transports.Console({

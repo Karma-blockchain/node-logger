@@ -1,6 +1,6 @@
 {
   "name": "karma-logger-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@bitbucket.org:karmared/karma-logger-node.git",
   "author": "Nikolay Nozdrin-Plotnitsky <nozdrin.plotnitsky@karma.red>",
