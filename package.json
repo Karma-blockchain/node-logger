@@ -1,13 +1,13 @@
 {
-  "name": "karma-logger-node",
+  "name": "@karma-blockchain/logger",
   "version": "1.0.1",
   "main": "index.js",
-  "repository": "git@bitbucket.org:karmared/karma-logger-node.git",
   "author": "Nikolay Nozdrin-Plotnitsky <nozdrin.plotnitsky@karma.red>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^6.1.0",
     "logform": "^1.10.0",
     "winston": "^3.1.0"
-  }
+  },
+  "devDependencies": {}
 }
