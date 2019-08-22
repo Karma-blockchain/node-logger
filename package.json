@@ -1,5 +1,5 @@
 {
-  "name": "@karma-blockchain/logger",
+  "name": "@karmared/logger",
   "version": "1.0.1",
   "main": "index.js",
   "author": "Nikolay Nozdrin-Plotnitsky <nozdrin.plotnitsky@karma.red>",
