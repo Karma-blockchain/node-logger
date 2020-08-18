@@ -1,13 +1,21 @@
 {
   "name": "@karmared/logger",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.1.0",
+  "main": "lib",
   "author": "Nikolay Nozdrin-Plotnitsky <nozdrin.plotnitsky@karma.red>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch src/*.ts --exec tsc",
+    "build": "rm -rf lib && tsc"
+  },
   "dependencies": {
-    "dotenv": "^6.1.0",
+    "dotenv": "^8.2.0",
     "logform": "^1.10.0",
     "winston": "^3.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
 }
